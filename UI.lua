@@ -1,4 +1,4 @@
-local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua"))()
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 local plr = game.Players.LocalPlayer
 
 local Window = Rayfield:CreateWindow({
@@ -35,7 +35,7 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local PlayerTab = Window:CreateTab("Player", user) -- Title, Image
+local PlayerTab = Window:CreateTab("Player", "user")
 local Slider = PlayerTab:CreateSlider({
    Name = "Speed",
    Range = {16, 400},
@@ -77,7 +77,7 @@ local TPButton = PlayerTab:CreateButton({
    end,
 })
 
-local FETab = Window:CreateTab("FE Things", eye) -- Title, Image
+local FETab = Window:CreateTab("FE Things", "eye") -- Title, Image
 local IYButton = FETab:CreateButton({
    Name = "Infinite Yield",
    Callback = function()
@@ -106,7 +106,7 @@ local KButton = FETab:CreateButton({
    end,
 })
 
-local NDSTab = Window:CreateTab("💀 Natural Disaster Survival 🏝️", tree-palm) -- Title, Image
+local NDSTab = Window:CreateTab("💀 Natural Disaster Survival 🏝️", "tree-palm") -- Title, Image
 local MainNDSSection = NDSTab:CreateSection("Main")
 local NDSTPDropdown = NDSTab:CreateDropdown({
    Name = "Teleport",
