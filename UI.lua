@@ -35,12 +35,12 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local PlayerTab = Window:CreateTab("Player", 18854842235) -- Title, Image
+local PlayerTab = Window:CreateTab("Player", user) -- Title, Image
 local Slider = PlayerTab:CreateSlider({
    Name = "Speed",
    Range = {16, 400},
    Increment = 1,
-   Suffix = "Your Speed Value",
+   Suffix = "speed",
    CurrentValue = 16,
    Flag = "SSLider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
@@ -51,7 +51,7 @@ local JPSlider = PlayerTab:CreateSlider({
    Name = "JumpPower",
    Range = {60, 400},
    Increment = 1,
-   Suffix = "jump go brr",
+   Suffix = "jumppower",
    CurrentValue = 60,
    Flag = "JSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
@@ -61,24 +61,12 @@ local JPSlider = PlayerTab:CreateSlider({
 local SITButton = PlayerTab:CreateButton({
    Name = "Sit (jump to disable)",
    Callback = function()
-   Rayfield:Notify({
-   Title = "Working Alert",
-   Content = "If you see this, the function (Sit) worked.",
-   Duration = 4,
-   Image = 4483362458,
-   })
    plr.Character:WaitForChild("Humanoid").Sit = true
    end,
 })
 local FLYButton = PlayerTab:CreateButton({
    Name = "fly",
    Callback = function()
-   Rayfield:Notify({
-   Title = "Working Alert",
-   Content = "If you see this, weeeeeeeeeee",
-   Duration = 4,
-   Image = 4483362458,
-   })
    loadstring(game:HttpGet("https://pastebin.com/raw/eQA4nfcw"))()
    end,
 })
@@ -89,7 +77,7 @@ local TPButton = PlayerTab:CreateButton({
    end,
 })
 
-local FETab = Window:CreateTab("FE Things", 4483362458) -- Title, Image
+local FETab = Window:CreateTab("FE Things", eye) -- Title, Image
 local IYButton = FETab:CreateButton({
    Name = "Infinite Yield",
    Callback = function()
@@ -118,7 +106,7 @@ local KButton = FETab:CreateButton({
    end,
 })
 
-local NDSTab = Window:CreateTab("💀 Natural Disaster Survival 🏝️", 4483362458) -- Title, Image
+local NDSTab = Window:CreateTab("💀 Natural Disaster Survival 🏝️", tree-palm) -- Title, Image
 local MainNDSSection = NDSTab:CreateSection("Main")
 local NDSTPDropdown = NDSTab:CreateDropdown({
    Name = "Teleport",
