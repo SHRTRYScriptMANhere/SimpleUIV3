@@ -4,7 +4,7 @@ local plr = game.Players.LocalPlayer
 
 local Window = Rayfield:CreateWindow({
    Name = "Simple UI V3 by maksat_rel/SomeGuy",
-   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   Icon = "user", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Simple UI V3 is loading...",
    LoadingSubtitle = "by SomeGuy",
    Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
@@ -103,7 +103,7 @@ local JOButton = FETab:CreateButton({
 local KButton = FETab:CreateButton({
    Name = "Kill Yourself (can kill others if there is stroller item in game)",
    Callback = function()
-   plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(0, -9999, 0)
+   plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(0, -20, 0)
    end,
 })
 
