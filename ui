@@ -1,4 +1,4 @@
-print("test")
+print("Success")
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 local plr = game.Players.LocalPlayer
 
@@ -103,7 +103,7 @@ local JOButton = FETab:CreateButton({
 local KButton = FETab:CreateButton({
    Name = "Kill Yourself (can kill others if there is stroller item in game)",
    Callback = function()
-   plr.Character:WaitForChild("HumanoidRootPart").Position = Vector3.new(0, -9999, 0)
+   plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(0, -9999, 0)
    end,
 })
 
