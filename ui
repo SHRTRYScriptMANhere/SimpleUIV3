@@ -112,6 +112,17 @@ local KButton = FETab:CreateButton({
    end,
 })
 
+local PTPINP = FETab:CreateInput({
+   Name = "Teleport to Player",
+   CurrentValue = "",
+   PlaceholderText = "Username",
+   RemoveTextAfterFocusLost = false,
+   Flag = "tptext",
+   Callback = function(Text)
+   plr.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[Text].Character:WaitForChild("HumanoidRootPart").CFrame
+   end,
+})
+
 local NDSTab = Window:CreateTab("💀 Natural Disaster Survival 🏝️", "tree-palm") -- Title, Image
 local MainNDSSection = NDSTab:CreateSection("Main")
 
@@ -127,3 +138,4 @@ local ThemeSelector = UiSettings:CreateDropdown({
         Window.ModifyTheme(Options[1])
     end,
 })
+\
