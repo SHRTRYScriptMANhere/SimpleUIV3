@@ -41,3 +41,4 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SHRTRYScriptMANhere/forui/refs/heads/main/th",true))()
