@@ -133,13 +133,13 @@ local espsec = espTab:CreateSection("Toggle ESP")
 local Toggle = espTab:CreateToggle({
    Name = "Esp",
    CurrentValue = false,
-   Flag = "esp", --quit yappin
+   Flag = "esp", -- quit yappin
    Callback = function(Value)
    if Value == true then
 		print("esp")
-	else
+   elseif Value == false then
 		print("im gonna die bruh")
-   end,
+   end
 })
 
 local espcorsec = espTab:CreateSection("Color Picker")
