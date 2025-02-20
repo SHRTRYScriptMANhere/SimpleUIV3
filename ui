@@ -23,11 +23,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "Big Hub"
    },
 
-   Discord = {
-      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
-      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-   },
+
 local PlayerTab = Window:CreateTab("Player", "user")
 local Slider = PlayerTab:CreateSlider({
    Name = "Speed",
@@ -40,6 +36,7 @@ local Slider = PlayerTab:CreateSlider({
    plr.Character:WaitForChild("Humanoid").WalkSpeed = Value
    end,
 })
+
 local JPSlider = PlayerTab:CreateSlider({
    Name = "JumpPower",
    Range = {60, 400},
@@ -51,18 +48,21 @@ local JPSlider = PlayerTab:CreateSlider({
    plr.Character:WaitForChild("Humanoid").JumpPower = Value
    end,
 })
+
 local SITButton = PlayerTab:CreateButton({
    Name = "Sit (jump to disable)",
    Callback = function()
    plr.Character:WaitForChild("Humanoid").Sit = true
    end,
 })
+
 local FLYButton = PlayerTab:CreateButton({
    Name = "fly",
    Callback = function()
    loadstring(game:HttpGet("https://pastebin.com/raw/eQA4nfcw"))()
    end,
 })
+
 local TPButton = PlayerTab:CreateButton({
    Name = "TP Tool",
    Callback = function()
@@ -83,6 +83,7 @@ local IYButton = FETab:CreateButton({
    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
    end,
 })
+
 local JOButton = FETab:CreateButton({
    Name = "jerk off (r15 and r6)",
    Callback = function()
@@ -92,6 +93,7 @@ local JOButton = FETab:CreateButton({
    loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
    end,
 })
+
 local KButton = FETab:CreateButton({
    Name = "Kill Yourself (can kill others if there is stroller item in game)",
    Callback = function()
@@ -99,7 +101,7 @@ local KButton = FETab:CreateButton({
    end,
 })
 
-local PTPINP = FETab:CreateInput({
+local TPINP = FETab:CreateInput({
    Name = "Teleport to Player",
    CurrentValue = "",
    PlaceholderText = "Username",
@@ -125,3 +127,19 @@ local ThemeSelector = UiSettings:CreateDropdown({
         Window.ModifyTheme(Options[1])
     end,
 })
+
+local espTab = Window:CreateTab("ESP", "eye")
+local espsec = espTab:CreateSection("Toggle ESP")
+local Toggle = espTab:CreateToggle({
+   Name = "Esp",
+   CurrentValue = false,
+   Flag = "esp", --quit yappin
+   Callback = function(Value)
+   if Value == true then
+		print("esp")
+	else
+		print("im gonna die bruh")
+   end,
+})
+
+local espcorsec = espTab:CreateSection("Color Picker")
