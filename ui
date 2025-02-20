@@ -9,7 +9,7 @@ local plr = game.Players.LocalPlayer
 
 local Window = Rayfield:CreateWindow({
    Name = "Simple UI V3 by maksat_rel/SomeGuy",
-   Icon = "user", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   Icon = "user", -- skibidi haha
    LoadingTitle = "Simple UI V3 is loading...",
    LoadingSubtitle = "by SomeGuy",
    Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
