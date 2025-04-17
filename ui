@@ -25,7 +25,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 -- GitHub raw file URL
-local url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/branch/main/SimplesASSETS"
+local url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/tree/main/SimplesASSETS"
 
 -- Name to save as in the executor folder
 local filename = "SimplesASSETS"
