@@ -8,10 +8,10 @@ local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 local plr = game.Players.LocalPlayer
 
 local Window = Rayfield:CreateWindow({
-   Name = "Simple UI V3 by maksat_rel/SomeGuy",
+   Name = "Simple UI V4 by maksat_rel/SomeGuy",
    Icon = "user", -- skibidi haha
-   LoadingTitle = "Simple UI V3 is loading...",
-   LoadingSubtitle = "by SomeGuy",
+   LoadingTitle = "tung tung tung tung tung tung tung tung tung sahur",
+   LoadingSubtitle = "by sahur",
    Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    DisableRayfieldPrompts = false,
@@ -19,10 +19,30 @@ local Window = Rayfield:CreateWindow({
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Big Hub"
+      FolderName = "SimpleUI", -- Create a custom folder for your hub/game
+      FileName = "i caca"
    }
 })
+
+-- GitHub raw file URL
+local url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/main/SimplesASSETS"
+
+-- Name to save as in the executor folder
+local filename = "SimplesASSETS"
+
+-- Make HTTP GET request
+local response = request({
+    Url = url,
+    Method = "GET"
+})
+
+-- If successful, write to file
+if response.Success then
+    writefile(filename, response.Body)
+    print("File downloaded and saved as " .. filename)
+else
+    warn("Failed to download file: " .. response.StatusCode)
+end
 
 local PlayerTab = Window:CreateTab("Player", "user")
 local Slider = PlayerTab:CreateSlider({
