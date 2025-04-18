@@ -25,9 +25,17 @@ local Window = Rayfield:CreateWindow({
 })
 
 if isfolder("SimpleUI") then
-
+	local skibfold = "SimpleUI/Assets
+	if isfolder(skibfold) then
+		print("gyat already here")
+	else
+		writefolder(skibfold)
+		print("gyatted out")
+	end
 else
 	writefolder("SimpleUI")
+	local s = "SimpleUI/Assets"
+	writefolder(s)
 end
 -- Config
 local base_url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/refs/heads/main/SimplesASSETS/"
