@@ -24,17 +24,40 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
--- GitHub raw file URL
-local url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/tree/main/SimplesASSETS"
+if isfolder("SimpleUI") then
 
--- Name to save as in the executor folder
-local filename = "SimplesASSETS"
+else
+	writefolder("SimpleUI")
+end
+-- Config
+local base_url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/tree/main/SimplesASSETS/"
+local files = {
+    "file1.lua",
+    "file2.lua",
+    "file3.lua"
+}
 
--- Make HTTP GET request
-local response = request({
-    Url = url,
-    Method = "GET"
-})
+local save_path = "SimpleUI/" -- or any relative path used by your executor
+
+-- Request function (compatible with most executors)
+local requestFunc = (syn and syn.request) or http_request or request
+
+-- Download loop
+for _, filename in ipairs(files) do
+    local url = base_url .. filename
+    local response = requestFunc({
+        Url = url,
+        Method = "GET"
+    })
+
+    if response and response.StatusCode == 200 then
+        writefile(save_path .. filename, response.Body)
+        print("Downloaded:", filename)
+    else
+        warn("Failed to download:", filename)
+    end
+end
+
 
 -- If successful, write to file
 if response.Success then
