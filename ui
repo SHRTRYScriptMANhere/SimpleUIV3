@@ -196,24 +196,24 @@ local Toggle = espTab:CreateToggle({
 		while true do
 			task.wait(0.1)
 			for _, Player in pairs(Players:GetPlayers()) do
-					local esp = Instance.new("Highlight")
-					esp.Parent = Player.Character
-					esp.FillColor = colorpart.Color
-					esp.OutlineColor = colorpart.Color
-					esp.FillTransparency = 0.85
-					esp.OutlineTransparency = 0
-					esp.Name = high
+					--local esp = Instance.new("Highlight")
+					--esp.Parent = Player.Character
+					--esp.FillColor = colorpart.Color
+					--esp.OutlineColor = colorpart.Color
+					--esp.FillTransparency = 0.85
+					--esp.OutlineTransparency = 0
+					--esp.Name = high
 			end
 		end
    	elseif Value == false then
 			while true do
 			task.wait(0.1)
 			for _, Player in pairs(Players:GetPlayers()) do
-					local esp = Player.Character:FindFirstChild("high")
-					esp.FillColor = colorpart.Color
-					esp.OutlineColor = colorpart.Color
-					esp.FillTransparency = 1
-					esp.OutlineTransparency = 1
+					--local esp = Player.Character:FindFirstChild("high")
+					--esp.FillColor = colorpart.Color
+					--esp.OutlineColor = colorpart.Color
+					--esp.FillTransparency = 1
+					--esp.OutlineTransparency = 1
 			end
 		end
 	end
