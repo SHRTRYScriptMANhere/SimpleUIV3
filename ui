@@ -217,7 +217,7 @@ local Toggle = espTab:CreateToggle({
 			end
 		end
 	end
-  end,
+end,
 })
 
 local espcorsec = espTab:CreateSection("Color Picker")
