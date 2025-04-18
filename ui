@@ -1,4 +1,3 @@
-print("Success")
 local killpart = Instance.new("Part")
 killpart.Parent = game.Workspace
 killpart.Anchored = true
