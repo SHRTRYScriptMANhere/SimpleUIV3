@@ -3,6 +3,10 @@ local killpart = Instance.new("Part")
 killpart.Parent = game.Workspace
 killpart.Anchored = true
 killpart.Position = Vector3.new(0, -99, 0)
+local colorpart = Instance.new("Part")
+colorpart.Parent = game.Lighting
+colorpart.Anchored = true
+colorpart.Color3 = Color3.FromRGB(255, 0, 0)
 local kcfr = killpart.CFrame
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 local plr = game.Players.LocalPlayer
@@ -186,7 +190,14 @@ local Toggle = espTab:CreateToggle({
    Flag = "esp", -- quit yappin
    Callback = function(Value)
    	if Value == true then
-			print("esp")
+		local Players = game:GetService("Players")
+		while true do
+			task.wait(0.1)
+			for _, Player in pairs(Players:GetPlayers()) do
+					local esp = instance.new("Highlight")
+					esp.Parent = Player.Character
+			end
+		end
    	elseif Value == false then
 			print("im gonna die bruh")
 	end
@@ -194,3 +205,11 @@ local Toggle = espTab:CreateToggle({
 })
 
 local espcorsec = espTab:CreateSection("Color Picker")
+local ColorPicker = Tab:CreateColorPicker({
+    Name = "Player color",
+    Color = Color3.fromRGB(255,0,0),
+    Flag = "ColorPicker1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+       colorpart.Color3 = Value 
+    end
+})
