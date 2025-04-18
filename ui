@@ -33,10 +33,10 @@ local Window = Rayfield:CreateWindow({
 if isfolder("SimpleUI") then
 	local skibfold = "SimpleUI/Assets"
 	if isfolder(skibfold) then
-		print("gyat already here")
+		
 	else
 		writefolder(skibfold)
-		print("gyatted out")
+		
 	end
 else
 	writefolder("SimpleUI")
