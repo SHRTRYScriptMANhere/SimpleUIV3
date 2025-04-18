@@ -30,11 +30,10 @@ else
 	writefolder("SimpleUI")
 end
 -- Config
-local base_url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/tree/main/SimplesASSETS/"
+local base_url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/refs/heads/main/SimplesASSETS/"
 local files = {
-    "file1.lua",
-    "file2.lua",
-    "file3.lua"
+    "buff.png",
+    "Hold"
 }
 
 local save_path = "SimpleUI/" -- or any relative path used by your executor
