@@ -44,7 +44,7 @@ else
 	writefolder(s)
 end
 -- Config
-local base_url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/refs/heads/main/SimplesASSETS/"
+local base_url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/main/SimplesASSETS/"
 local files = {
     "buff.png",
     "Hold",
