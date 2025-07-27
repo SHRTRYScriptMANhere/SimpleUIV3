@@ -114,12 +114,62 @@ local TPButton = PlayerTab:CreateButton({
    end,
 })
 
-local TungButton = PlayerTab:CreateButton({
-   Name = "Tung",
-   Callback = function()
-   print("Tung")
-   end
+local TungToggle = PlayerTab:CreateToggle({
+    Name = "TUNG TUNG TUNG SAHAR",
+    CurrentValue = false,
+    Flag = "BrainTungToggle",
+    Callback = function(Value)
+        local save_path = "SimpleUI/Assets/"
+        local image_path = save_path .. "BrainTung.png"
+        local sound_path = save_path .. "BrainTung.mp3"
+
+        local player = game.Players.LocalPlayer
+        local playerGui = player:WaitForChild("PlayerGui")
+
+        if Value then
+            -- Create ScreenGui
+            local gui = playerGui:FindFirstChild("BrainTungGui")
+            if not gui then
+                gui = Instance.new("ScreenGui")
+                gui.Name = "BrainTungGui"
+                gui.Parent = playerGui
+            end
+
+            -- Create Image
+            local img = gui:FindFirstChild("BrainImage")
+            if not img then
+                img = Instance.new("ImageLabel")
+                img.Name = "BrainImage"
+                img.AnchorPoint = Vector2.new(1, 0) -- top-right
+                img.Size = UDim2.new(0.15, 0, 0.15, 0) -- 15% of screen width/height
+                img.Position = UDim2.new(1, -0.02, 0, 0.02) -- small margin from top-right
+                img.BackgroundTransparency = 1
+                img.Image = getcustomasset(image_path)
+                img.Parent = gui
+            end
+
+            -- Create and Play Sound
+            local snd = gui:FindFirstChild("BrainSound")
+            if not snd then
+                snd = Instance.new("Sound")
+                snd.Name = "BrainSound"
+                snd.SoundId = getcustomasset(sound_path)
+                snd.Volume = 1
+                snd.Looped = true
+                snd.Parent = gui
+            end
+            snd:Play()
+
+        else
+            -- Remove GUI (stops sound too)
+            local gui = playerGui:FindFirstChild("BrainTungGui")
+            if gui then
+                gui:Destroy()
+            end
+        end
+    end,
 })
+
 
 local FETab = Window:CreateTab("FE Things", "eye") -- Title, Image
 local IYButton = FETab:CreateButton({
