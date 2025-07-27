@@ -41,7 +41,7 @@ if isfolder("SimpleUI") then
 else
 	makefolder("SimpleUI")
 	local s = "SimpleUI/Assets"
-	writefolder(s)
+	makefolder(s)
 end
 -- Config
 local base_url = "https://raw.githubusercontent.com/SHRTRYScriptMANhere/SimpleUIV3/main/SimplesASSETS/"
@@ -52,7 +52,7 @@ local files = {
     "BrainTung.mp3"
 }
 
-local save_path = "SimpleUI/" -- or any relative path used by your executor
+local save_path = "SimpleUI/Assets" -- or any relative path used by your executor
 
 -- Request function (compatible with most executors)
 local requestFunc = (syn and syn.request) or http_request or request
@@ -71,15 +71,6 @@ for _, filename in ipairs(files) do
     else
         warn("Failed to download:", filename)
     end
-end
-
-
--- If successful, write to file
-if response.Success then
-    writefile(filename, response.Body)
-    print("File downloaded and saved as " .. filename)
-else
-    warn("Failed to download file: " .. response.StatusCode)
 end
 
 local PlayerTab = Window:CreateTab("Player", "user")
@@ -131,7 +122,8 @@ local TPButton = PlayerTab:CreateButton({
 local TungButton = PlayerTab:CreateButton({
    Name = "Tung",
    Callback = function()
-   print("Tung"),
+   print("Tung")
+   end
 })
 
 local FETab = Window:CreateTab("FE Things", "eye") -- Title, Image
