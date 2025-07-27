@@ -35,11 +35,11 @@ if isfolder("SimpleUI") then
 	if isfolder(skibfold) then
 		
 	else
-		writefolder(skibfold)
+		makefolder(skibfold)
 		
 	end
 else
-	writefolder("SimpleUI")
+	makefolder("SimpleUI")
 	local s = "SimpleUI/Assets"
 	writefolder(s)
 end
@@ -126,6 +126,12 @@ local TPButton = PlayerTab:CreateButton({
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/SHRTRYScriptMANhere/TPTool/refs/heads/main/teleportation"))()
    end,
+})
+
+local TungButton = PlayerTab:CreateButton({
+   Name = "Tung",
+   Callback = function()
+   print("Tung"),
 })
 
 local FETab = Window:CreateTab("FE Things", "eye") -- Title, Image
